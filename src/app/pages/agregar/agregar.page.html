@@ -1,9 +1,33 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Agregar lista</ion-title>
+<ion-header no-border>
+    <!-- el no-border sirve para quitar la linea que separa el titulo -->
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <!-- para que en el toolbar se pueda agregar X cant. de botones -->
+            <ion-back-button defaultHref="/" color="tertiary"></ion-back-button>
+            <!-- el defaultHref es para obligar a que el backbutton aparezca -->
+
+        </ion-buttons>
+        <ion-title>{{this.lista.titulo}}</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <h1>Agregar lista</h1>
+<ion-content color="dark">
+    <ion-list color="dark">
+        <!-- se pone dentro de una lista para que si hay muchos items se ponga un scroll -->
+        <ion-item color="dark">
+            <ion-label position="floating">Nuevo item</ion-label>
+            <ion-input type="text" [(ngModel)]="nombreItem" (keyup.enter)="agregarItem()"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header color="dark">
+            <ion-label>Tareas por hacer</ion-label>
+        </ion-list-header>
+        <ion-item color="dark" *ngFor="let item of lista.items">
+            <ion-checkbox slot="start" color="tertiary" [(ngModel)]="item.completado"></ion-checkbox>
+            <ion-label>{{item.desc}}</ion-label>
+
+        </ion-item>
+    </ion-list>
 </ion-content>
