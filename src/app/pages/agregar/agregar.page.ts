@@ -32,4 +32,20 @@ export class AgregarPage implements OnInit {
     this.deseosService.guardarStrogae();
   }
 
+  cambioCheck(item: ListaItem) {
+    // pendientes: esto retorna un arrelo con todos los items que estan pendientes y dice cuantos hay
+    const pendientes = this.lista.items.filter(itemData => {
+      return !itemData.completado;
+    }).length;
+    if (pendientes === 0) { /* cuando ya no hay tareas pendientes */
+      this.lista.terminadaEn = new Date();
+      this.lista.completada = true;
+    } else { /* en caso de que se quitara un elemento o una tarea entonces ya no estaria terminada */
+      this.lista.terminadaEn = null;
+      this.lista.completada = false;
+    }
+    this.deseosService.guardarStrogae();
+    console.log(this.lista);
+  }
+
 }
