@@ -1,9 +1,11 @@
-<ion-header>
-    <ion-toolbar>
+<ion-header no-border>
+    <ion-toolbar color="dark">
         <ion-title>
-            Tab Two
+            Terminados
         </ion-title>
     </ion-toolbar>
 </ion-header>
-<app-listas></app-listas>
-<ion-content></ion-content>
+<ion-content color="dark">
+    <app-listas [terminada]="true"></app-listas>
+    <!-- teminada es para enviar el dato y ver si es terminada o pendiente -->
+</ion-content>

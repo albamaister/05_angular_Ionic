@@ -7,14 +7,15 @@
 </ion-header>
 
 <ion-content color="dark">
-    <app-listas></app-listas>
-    <ion-list color="dark">
+    <app-listas [terminada]="false"></app-listas>
+    <!-- teminada es para enviar el dato y ver si es terminada o pendiente -->
+    <!-- <ion-list color="dark">
         <ion-item *ngFor="let lista of deseosService.listas" detail color="dark" (click)="listaSeleccionada( lista )">
             <ion-label>{{lista.titulo}}</ion-label>
-            <ion-note slot="end" color="tertiary">{{lista.items.length}} items</ion-note>
-            <!-- ionnote sirve para poner una nota al final -->
-        </ion-item>
-    </ion-list>
+            <ion-note slot="end" color="tertiary">{{lista.items.length}} items</ion-note> -->
+    <!-- ionnote sirve para poner una nota al final -->
+    <!-- </ion-item>-->
+    <!-- </ion-list>  -->
     <!-- fab placed to the top end -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button color="tertiary" (click)="agregarLista()">
