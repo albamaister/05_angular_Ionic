@@ -47,5 +47,9 @@ export class AgregarPage implements OnInit {
     this.deseosService.guardarStrogae();
     console.log(this.lista);
   }
+  eliminar( i: number ) {
+    this.lista.items.splice( i, 1 );
+    this.deseosService.guardarStrogae();
+  }
 
 }
