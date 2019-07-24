@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListasComponent } from './listas/listas.component';
 import { IonicModule } from '@ionic/angular';
+import { PipesModule } from '../pipes/pipes.module';
 // el CommonModule nos sirve si vamos a usar el ngIf, ngFor, etc
 
 @NgModule({
@@ -15,7 +16,8 @@ import { IonicModule } from '@ionic/angular';
   // si se va a trabajar con este modulo de forma externa
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    PipesModule
   ]
 })
 export class ComponentsModule { }
