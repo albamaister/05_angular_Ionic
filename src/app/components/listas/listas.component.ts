@@ -23,4 +23,8 @@ export class ListasComponent implements OnInit {
     // console.log(lista);
   }
 
+  eliminarLista(lista: Lista) {
+    this.deseosService.eliminarLista( lista );
+  }
+
 }

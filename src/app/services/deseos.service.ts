@@ -35,4 +35,11 @@ export class DeseosService {
     this.listas = JSON.parse(localStorage.getItem('data'));
     }
   }
+
+  eliminarLista(lista: Lista) {
+    this.listas = this.listas.filter( listaData => {
+      return listaData.id !== lista.id;
+    });
+    this.guardarStrogae();
+  }
 }
